@@ -77,32 +77,21 @@ main {
 
 // About me
 .about-me {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
   .portrait {
-    display: grid;
-    grid-template-rows: 1fr min-content;
-    justify-content: center;
-    justify-items: center;
+    // display: grid;
+    // grid-template-rows: 1fr min-content;
+    // justify-content: center;
+    // justify-items: center;
 
     position: relative;
 
-    &::before {
-      position: absolute;
-      background-color: var(--color-accent);
-
-      content: "";
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      margin: calc(-1 * $page-padding);
-      z-index: -1;
-      clip-path: polygon(0 0, 0 90%, 100% 50%, 100% 0);
-    }
-
     img {
-      grid-row: 1 / -1;
-      grid-column: 1 / 2;
-
+      // grid-row: 1 / -1;
+      // grid-column: 1 / 2;
       max-width: 100%;
       object-fit: cover;
       aspect-ratio: 0.9;
@@ -117,6 +106,20 @@ main {
       color: white;
       margin: 5px 0;
     }
+  }
+
+  &::before {
+    position: absolute;
+    background-color: var(--color-accent);
+
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    margin: $padding-reverse;
+    clip-path: polygon(0 0, 0 85vw, 100% 50vw, 100% 0);
   }
 }
 
@@ -193,5 +196,17 @@ footer {
 @media (min-width: $tablet-size-min) {
   h1 {
     text-align: left;
+  }
+
+  .about-me {
+    flex-direction: row;
+
+    .portrait {
+      width: 100%;
+    }
+
+    &::before {
+      clip-path: polygon(0 0, 0 80%, 100% 30%, 100% 0);
+    }
   }
 }
