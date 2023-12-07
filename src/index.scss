@@ -17,8 +17,10 @@
   font-size: 16px;
   font-weight: 300;
 
+  --color-accent: rgb(250, 205, 213);
   --icon: 2rem;
   --page-padding: 30px;
+  --padding-reverse: calc(-1 * var(--page-padding));
 }
 
 // General styles
@@ -52,13 +54,21 @@ h1 {
 body {
   margin: 0;
   padding: var(--page-padding);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 // About me
 .about-me {
-  // display: flex;
-  // flex-direction: column-reverse;
-
   .portrait {
     display: grid;
     grid-template-rows: 1fr min-content;
@@ -69,7 +79,7 @@ body {
 
     &::before {
       position: absolute;
-      background-color: rgb(250, 205, 213);
+      background-color: var(--color-accent);
 
       content: "";
       top: 0;
@@ -107,6 +117,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
+
+  h1 {
+    margin: 0;
+  }
 }
 
 .project {
@@ -138,5 +152,35 @@ body {
       margin: 10px 0;
       grid-column: 1 / -1;
     }
+  }
+}
+
+// Footer
+footer {
+  margin: var(--padding-reverse);
+  margin-top: 0;
+
+  .contact-me {
+    background: var(--color-accent);
+    padding: var(--page-padding);
+
+    h1 {
+      margin: 0;
+    }
+
+    .address,
+    .phone,
+    .email {
+      margin: 5px 0;
+    }
+
+    .external-links {
+      margin-top: 30px;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
   }
 }
