@@ -19,11 +19,19 @@
 
   --color-accent: rgb(250, 205, 213);
   --icon: 2rem;
-  --page-padding: 30px;
-  --padding-reverse: calc(-1 * var(--page-padding));
 }
 
+$page-padding: 30px;
+$padding-reverse: -1 * $page-padding;
+$grid-gap: 20px;
+$min-grid-card-width: 250px;
+$tablet-size-min: $min-grid-card-width * 2 + $grid-gap + $page-padding * 2;
+
 // General styles
+* {
+  box-sizing: border-box;
+}
+
 h1 {
   text-align: center;
 }
@@ -53,7 +61,7 @@ h1 {
 // Body
 body {
   margin: 0;
-  padding: var(--page-padding);
+  padding: $page-padding;
 
   display: flex;
   flex-direction: column;
@@ -86,7 +94,7 @@ main {
       left: 0;
       right: 0;
       bottom: 0;
-      margin: calc(-1 * var(--page-padding));
+      margin: calc(-1 * $page-padding);
       z-index: -1;
       clip-path: polygon(0 0, 0 90%, 100% 50%, 100% 0);
     }
@@ -113,14 +121,10 @@ main {
 }
 
 // My work
-.my-work {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-
-  h1 {
-    margin: 0;
-  }
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-grid-card-width, 1fr));
+  gap: $grid-gap;
 }
 
 .project {
@@ -157,12 +161,12 @@ main {
 
 // Footer
 footer {
-  margin: var(--padding-reverse);
+  margin: $padding-reverse;
   margin-top: 0;
 
   .contact-me {
     background: var(--color-accent);
-    padding: var(--page-padding);
+    padding: $page-padding;
 
     h1 {
       margin: 0;
@@ -182,5 +186,12 @@ footer {
   img {
     width: 100%;
     max-width: 100%;
+  }
+}
+
+// Media queries
+@media (min-width: $tablet-size-min) {
+  h1 {
+    text-align: left;
   }
 }
