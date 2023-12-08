@@ -21,4 +21,14 @@ main {
   h1 {
     text-align: left;
   }
+
+  :root {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: breakpts.$desktop-size-min) {
+  :root {
+    font-size: 18px;
+  }
 }
