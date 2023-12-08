@@ -201,6 +201,9 @@ footer {
 
 // Media queries
 @media (min-width: $tablet-size-min) {
+  $page-padding: 80px;
+  $grid-gap: 40px;
+
   // General styles
   h1 {
     text-align: left;
@@ -209,6 +212,9 @@ footer {
   // About me
   .about-me {
     display: block;
+    margin: $page-padding;
+    margin-bottom: 0;
+
     .portrait {
       width: 50%;
       margin-right: 20px;
@@ -236,6 +242,14 @@ footer {
     }
   }
 
+  .my-work {
+    margin: 0 $page-padding;
+
+    .grid-container {
+      gap: $grid-gap;
+    }
+  }
+
   // Footer
   footer {
     flex-direction: row;
@@ -244,6 +258,8 @@ footer {
     padding: $page-padding;
 
     .contact-me {
+      padding: $page-padding;
+
       flex: 1 1 100px;
       padding: 0;
       max-width: 400px;
