@@ -5,6 +5,8 @@
 
 // TODO: deliver different size images for different viewports using srcset
 // TODO: add 3 more projects (6 in total)
+// TODO: increase font size for larger screens
+// TOD: increase page padding for larger screens
 
 // use javascript for repeating elements (external links)
 
@@ -22,10 +24,12 @@
 }
 
 $page-padding: 30px;
-$padding-reverse: -1 * $page-padding;
+$section-margin: 100px;
 $grid-gap: 20px;
 $min-grid-card-width: 250px;
 $tablet-size-min: $min-grid-card-width * 2 + $grid-gap + $page-padding * 2;
+$desktop-size-min: 1050px;
+$about-me-info-indent: 50px;
 
 // General styles
 * {
@@ -61,51 +65,49 @@ h1 {
 // Body
 body {
   margin: 0;
-  padding: $page-padding;
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 100px;
+  gap: $section-margin;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: $section-margin;
 }
 
 // About me
 .about-me {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  margin: $page-padding;
+  margin-bottom: 0;
 
   .portrait {
-    // display: grid;
-    // grid-template-rows: 1fr min-content;
-    // justify-content: center;
-    // justify-items: center;
-
     position: relative;
+    max-width: 500px;
 
     img {
-      // grid-row: 1 / -1;
-      // grid-column: 1 / 2;
       max-width: 100%;
       object-fit: cover;
       aspect-ratio: 0.9;
 
       box-shadow: -5px 0px 30px rgba(0, 0, 0, 0.408);
     }
+  }
 
-    .my-name {
-      grid-row: 2 / -1;
-      grid-column: 1 / 2;
+  .my-name {
+    position: absolute;
+    display: block;
 
-      color: white;
-      margin: 5px 0;
-    }
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin: 0;
+    color: white;
+    text-wrap: nowrap;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.712);
+    font-size: 2.5rem;
   }
 
   &::before {
@@ -118,12 +120,15 @@ main {
     bottom: 0;
     right: 0;
     z-index: -1;
-    margin: $padding-reverse;
     clip-path: polygon(0 0, 0 85vw, 100% 50vw, 100% 0);
   }
 }
 
 // My work
+.my-work {
+  margin: 0 $page-padding;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($min-grid-card-width, 1fr));
@@ -164,9 +169,6 @@ main {
 
 // Footer
 footer {
-  margin: $padding-reverse;
-  margin-top: 0;
-
   .contact-me {
     background: var(--color-accent);
     padding: $page-padding;
@@ -194,19 +196,74 @@ footer {
 
 // Media queries
 @media (min-width: $tablet-size-min) {
+  // General styles
   h1 {
     text-align: left;
   }
 
+  // About me
   .about-me {
-    flex-direction: row;
-
+    display: block;
     .portrait {
-      width: 100%;
+      width: 50%;
+      margin-right: 20px;
+      float: left;
+      clear: none;
+    }
+
+    .info {
+      background: white;
+      box-shadow: 15px 5px 30px rgba(0, 0, 0, 0.408);
+      margin: 0 $about-me-info-indent;
+      padding: 40px;
+
+      h1 {
+        margin: 0;
+      }
+    }
+
+    .above-info-filler {
+      height: 80px;
     }
 
     &::before {
-      clip-path: polygon(0 0, 0 80%, 100% 30%, 100% 0);
+      clip-path: polygon(0 0, 0 60%, 100% 30%, 100% 0);
+    }
+  }
+}
+
+@media (min-width: $tablet-size-min) and (max-width: ($desktop-size-min - 1px)) {
+  .about-me {
+    .portrait {
+      .my-name {
+        top: 0;
+        right: 0;
+        transform: translateX(calc(100% + 20px));
+        color: black;
+        text-shadow: none;
+      }
+    }
+
+    .info {
+      .external-links {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-size-min) {
+  .about-me {
+    .portrait {
+      margin-top: $about-me-info-indent;
+      margin-left: $about-me-info-indent;
+    }
+
+    .info {
+      .external-links {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 }
