@@ -169,8 +169,13 @@ main {
 
 // Footer
 footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: var(--color-accent);
+  align-items: center;
+
   .contact-me {
-    background: var(--color-accent);
     padding: $page-padding;
 
     h1 {
@@ -228,6 +233,33 @@ footer {
 
     &::before {
       clip-path: polygon(0 0, 0 60%, 100% 30%, 100% 0);
+    }
+  }
+
+  // Footer
+  footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: $page-padding;
+    padding: $page-padding;
+
+    .contact-me {
+      flex: 1 1 100px;
+      padding: 0;
+      max-width: 400px;
+    }
+
+    .photo {
+      flex: 1 0 200px;
+      max-height: 500px;
+      max-width: 700px;
+
+      img {
+        object-fit: cover;
+        object-position: top;
+        max-height: 500px;
+        max-width: 700px;
+      }
     }
   }
 }
