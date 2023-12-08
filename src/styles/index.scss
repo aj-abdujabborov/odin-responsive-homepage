@@ -1,13 +1,5 @@
-// Notes
-// for font sizes, set variables, but use rem. also use rem for padding and margins
-// worst case, you can change the variable values to pixels
-// benefit of rem is that it will work when a user sets a default font size through browser settings
-
 // TODO: deliver different size images for different viewports using srcset
 // TODO: add 3 more projects (6 in total)
-// TODO: increase font size for larger screens
-
-// use javascript for repeating elements (external links)
 
 @use "base/_base";
 @use "components/components";

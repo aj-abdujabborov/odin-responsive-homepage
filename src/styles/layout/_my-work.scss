@@ -7,7 +7,7 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(
-    auto-fit,
+    auto-fill,
     minmax(breakpts.$min-grid-card-width, 1fr)
   );
   gap: breakpts.$grid-gap;
