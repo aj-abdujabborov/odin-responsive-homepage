@@ -1,4 +1,4 @@
-import "./index.scss";
+import "./styles/index.scss";
 
 const projects = [...document.querySelectorAll(".project .info h2")];
 const projectCardLinksTemplate = document.querySelector(

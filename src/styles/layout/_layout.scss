@@ -1,0 +1,24 @@
+@use "./about-me";
+@use "./my-work";
+@use "./footer";
+@use "../variables/breakpoints" as breakpts;
+
+body {
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: breakpts.$section-margin;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: breakpts.$section-margin;
+}
+
+@media (min-width: breakpts.$tablet-size-min) {
+  h1 {
+    text-align: left;
+  }
+}

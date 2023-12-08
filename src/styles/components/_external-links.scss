@@ -1,0 +1,19 @@
+@use "../variables/font" as fonts;
+
+.external-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: fonts.$icon-size;
+
+  a {
+    color: black;
+    text-decoration: none;
+    font-size: inherit;
+
+    span {
+      font-size: inherit;
+    }
+  }
+}

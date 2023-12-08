@@ -1,0 +1,63 @@
+@use "../variables/breakpoints" as breakpts;
+@use "../variables/colors" as colors;
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: colors.$color-accent;
+  align-items: center;
+
+  .contact-me {
+    padding: breakpts.$page-padding;
+
+    h1 {
+      margin: 0;
+    }
+
+    .address,
+    .phone,
+    .email {
+      margin: 5px 0;
+    }
+
+    .external-links {
+      margin-top: 30px;
+    }
+  }
+
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: breakpts.$tablet-size-min) {
+  footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: breakpts.$page-padding-tablet;
+    padding: breakpts.$page-padding-tablet;
+
+    .contact-me {
+      padding: breakpts.$page-padding-tablet;
+
+      flex: 1 1 100px;
+      padding: 0;
+      max-width: 400px;
+    }
+
+    .photo {
+      flex: 1 0 200px;
+      max-height: 500px;
+      max-width: 700px;
+
+      img {
+        object-fit: cover;
+        object-position: top;
+        max-height: 500px;
+        max-width: 700px;
+      }
+    }
+  }
+}

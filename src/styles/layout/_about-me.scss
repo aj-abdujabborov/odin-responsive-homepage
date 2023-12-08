@@ -1,0 +1,120 @@
+@use "../variables/breakpoints" as breakpts;
+@use "../variables/colors" as colors;
+
+$about-me-info-indent: 50px;
+
+.about-me {
+  margin: breakpts.$page-padding;
+  margin-bottom: 0;
+
+  .portrait {
+    position: relative;
+    max-width: 500px;
+
+    img {
+      max-width: 100%;
+      object-fit: cover;
+      aspect-ratio: 0.9;
+
+      box-shadow: -5px 0px 30px rgba(0, 0, 0, 0.408);
+    }
+  }
+
+  .my-name {
+    position: absolute;
+    display: block;
+
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    margin: 0;
+    color: white;
+    text-wrap: nowrap;
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.712);
+    font-size: 2.5rem;
+  }
+
+  &::before {
+    position: absolute;
+    background-color: colors.$color-accent;
+
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    clip-path: polygon(0 0, 0 85vw, 100% 50vw, 100% 0);
+  }
+}
+
+@media (min-width: breakpts.$tablet-size-min) {
+  .about-me {
+    display: block;
+    margin: breakpts.$page-padding-tablet;
+    margin-bottom: 0;
+
+    .portrait {
+      width: 50%;
+      margin-right: 20px;
+      float: left;
+      clear: none;
+    }
+
+    .info {
+      background: white;
+      box-shadow: 15px 5px 30px rgba(0, 0, 0, 0.408);
+      margin: 0 $about-me-info-indent;
+      padding: 40px;
+
+      h1 {
+        margin: 0;
+      }
+    }
+
+    .above-info-filler {
+      height: 80px;
+    }
+
+    &::before {
+      clip-path: polygon(0 0, 0 60%, 100% 30%, 100% 0);
+    }
+  }
+}
+
+@media (min-width: breakpts.$tablet-size-min) and (max-width: (breakpts.$desktop-size-min - 1px)) {
+  .about-me {
+    .portrait {
+      .my-name {
+        top: 0;
+        right: 0;
+        transform: translateX(calc(100% + 20px));
+        color: black;
+        text-shadow: none;
+      }
+    }
+
+    .info {
+      .external-links {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: breakpts.$desktop-size-min) {
+  .about-me {
+    .portrait {
+      margin-top: $about-me-info-indent;
+      margin-left: $about-me-info-indent;
+    }
+
+    .info {
+      .external-links {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+}

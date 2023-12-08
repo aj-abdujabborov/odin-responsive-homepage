@@ -1,0 +1,15 @@
+// Grid
+$grid-gap: 20px;
+$min-grid-card-width: 250px;
+
+// Padding
+$page-padding: 30px;
+$section-margin: 100px;
+
+// Tablet
+$page-padding-tablet: 80px;
+$grid-gap-tablet: 40px;
+$tablet-size-min: $min-grid-card-width * 2 + $grid-gap + $page-padding * 2;
+
+// Destkop
+$desktop-size-min: 1050px;

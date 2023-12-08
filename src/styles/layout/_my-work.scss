@@ -1,0 +1,56 @@
+@use "../variables/breakpoints" as breakpts;
+
+.my-work {
+  margin: 0 breakpts.$page-padding;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(breakpts.$min-grid-card-width, 1fr)
+  );
+  gap: breakpts.$grid-gap;
+}
+
+.project {
+  box-shadow: -3px 3px 40px rgba(0, 0, 0, 0.123);
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  .info {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+
+    padding: 15px;
+
+    h2 {
+      margin: 0;
+    }
+
+    .external-links {
+      gap: 5px;
+      font-size: 25px;
+    }
+
+    p {
+      margin: 10px 0;
+      grid-column: 1 / -1;
+    }
+  }
+}
+
+@media (min-width: breakpts.$tablet-size-min) {
+  .my-work {
+    margin: 0 breakpts.$page-padding-tablet;
+
+    .grid-container {
+      gap: breakpts.$grid-gap-tablet;
+    }
+  }
+}
