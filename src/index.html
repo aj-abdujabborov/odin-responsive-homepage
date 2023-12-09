@@ -10,7 +10,11 @@
       <div class="about-me section">
         <div class="portrait">
           <img
-            src="./images/portrait-photo.jpg"
+            srcset="
+              ./images/portrait-photo_small.jpg 1.5x,
+              ./images/portrait-photo.jpg       2x
+            "
+            src="./images/portrait-photo_small.jpg"
             alt="Close up of Model-42 wearing a red hoodie"
           />
           <h1 class="my-name">Model-42</h1>
@@ -59,7 +63,11 @@
         <div class="grid-container">
           <div class="project">
             <img
-              src="./images/future-superman.jpg"
+              srcset="
+                ./images/future-superman_small.jpg 1.5x,
+                ./images/future-superman.jpg       2x
+              "
+              src="./images/future-superman_small.jpg"
               alt="Model-42 in front of a dark gloomy background"
             />
             <div class="info">
@@ -74,7 +82,11 @@
           </div>
           <div class="project">
             <img
-              src="./images/war-photoshoot.jpg"
+              srcset="
+                ./images/war-photoshoot_small.jpg 1.5x,
+                ./images/war-photoshoot.jpg       2x
+              "
+              src="./images/war-photoshoot_small.jpg"
               alt="Model-42 with tubes on his face and waring a combat helmet"
             />
             <div class="info">
@@ -90,7 +102,11 @@
           </div>
           <div class="project">
             <img
-              src="./images/dungaree.jpg"
+              srcset="
+                ./images/dungaree_small.jpg 1.5x,
+                ./images/dungaree.jpg       2x
+              "
+              src="./images/dungaree_small.jpg"
               alt="Model-42 wearing a dungaree"
             />
             <div class="info">
@@ -105,7 +121,11 @@
           </div>
           <div class="project">
             <img
-              src="./images/mafia-movie.jpg"
+              srcset="
+                ./images/mafia-movie_small.jpg 1.5x,
+                ./images/mafia-movie.jpg       2x
+              "
+              src="./images/mafia-movie_small.jpg"
               alt="Model-42 with 4 robots in the background"
             />
             <div class="info">
@@ -120,7 +140,14 @@
             </div>
           </div>
           <div class="project">
-            <img src="./images/ted-talk.jpg" alt="Model-42 giving a TED talk" />
+            <img
+              srcset="
+                ./images/ted-talk_small.jpg 1.5x,
+                ./images/ted-talk.jpg       2x
+              "
+              src="./images/ted-talk_small.jpg"
+              alt="Model-42 giving a TED talk"
+            />
             <div class="info">
               <h2>TED Talk</h2>
               <p>
@@ -135,7 +162,11 @@
           </div>
           <div class="project">
             <img
-              src="./images/supplement.jpg"
+              srcset="
+                ./images/supplement_small.jpg 1.5x,
+                ./images/supplement.jpg       2x
+              "
+              src="./images/supplement_small.jpg"
               alt="Model-42 holding a supplement container on which is written AD"
             />
             <div class="info">
@@ -191,7 +222,16 @@
         </div>
       </div>
       <div class="photo">
-        <img src="./images/footer-photo.jpg" alt="Model-42 in a hoodie" />
+        <picture>
+          <source
+            srcset="./images/footer-photo.jpg"
+            media="(min-width: 600px)"
+          />
+          <img
+            src="./images/footer-photo_small.jpg"
+            alt="Model-42 in a hoodie"
+          />
+        </picture>
       </div>
     </footer>
 
