@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=[...document.querySelectorAll(".project .info h2")],t=document.querySelector(".templates .external-links");e.forEach((e=>{const o=t.cloneNode(!0);e.after(o);const r=e.textContent,c=o.querySelector("a.github-icon"),n=o.querySelector("a.new-tab-icon");c.setAttribute("aria-label",`See ${r} on Github`),n.setAttribute("aria-label",`See ${r}`)}))})();
