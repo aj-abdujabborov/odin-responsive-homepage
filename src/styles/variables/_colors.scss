@@ -5,12 +5,16 @@ $palette: (
     accent: rgb(250, 205, 213),
     text: black,
     text-against-dark: white,
+    card-bg: rgb(234, 229, 229),
+    shadow: rgba(0, 0, 0, 0.408),
     bg: white,
   ),
   dark: (
     accent: #872341,
     text: rgb(218, 214, 214),
     text-against-dark: rgb(224, 221, 221),
+    card-bg: #371147,
+    shadow: #2b0d389f,
     bg: #22092c,
   ),
 );

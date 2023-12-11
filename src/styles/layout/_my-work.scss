@@ -14,7 +14,8 @@
 }
 
 .project {
-  box-shadow: -3px 3px 40px rgba(0, 0, 0, 0.123);
+  box-shadow: -3px 3px 40px var(--color-shadow);
+  background: var(--color-card-bg);
 
   img {
     width: 100%;
