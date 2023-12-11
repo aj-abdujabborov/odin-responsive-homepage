@@ -1,1 +1,40 @@
-$color-accent: rgb(250, 205, 213);
+@use "sass:map";
+
+$palette: (
+  light: (
+    accent: rgb(250, 205, 213),
+    text: black,
+    text-against-dark: white,
+    bg: white,
+  ),
+  dark: (
+    accent: #872341,
+    text: rgb(218, 214, 214),
+    text-against-dark: rgb(224, 221, 221),
+    bg: #22092c,
+  ),
+);
+
+@mixin setColors($mode) {
+  $aspectMap: map.get($palette, $mode);
+  @each $aspect, $color in $aspectMap {
+    --color-#{$aspect}: #{$color};
+  }
+}
+
+body {
+  @include setColors("light");
+}
+
+body.dark-theme {
+  @include setColors("dark");
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    @include setColors("dark");
+  }
+  body.light-theme {
+    @include setColors("light");
+  }
+}

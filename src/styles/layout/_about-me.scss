@@ -19,26 +19,45 @@ $about-me-info-indent: 50px;
 
       box-shadow: -5px 0px 30px rgba(0, 0, 0, 0.408);
     }
-  }
 
-  .my-name {
-    position: absolute;
-    display: block;
+    .my-name {
+      position: absolute;
+      display: block;
 
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
 
-    margin: 0;
-    color: white;
-    text-wrap: nowrap;
-    text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.712);
-    font-size: 2.5rem;
+      margin: 0;
+      color: var(--color-text-against-dark);
+      text-wrap: nowrap;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.712);
+      font-size: 2.5rem;
+    }
+
+    button.power-button {
+      position: absolute;
+      bottom: 15px;
+      right: 5px;
+
+      background: var(--color-bg);
+      border-radius: 50%;
+      padding: 3px;
+      border: none;
+      cursor: pointer;
+
+      span {
+        position: relative;
+        top: 1.5px;
+        font-size: 1.7rem;
+        color: var(--color-text);
+      }
+    }
   }
 
   &::before {
     position: absolute;
-    background-color: colors.$color-accent;
+    background-color: var(--color-accent);
 
     content: "";
     top: 0;
@@ -64,7 +83,7 @@ $about-me-info-indent: 50px;
     }
 
     .info {
-      background: white;
+      background: var(--color-bg);
       box-shadow: 15px 5px 30px rgba(0, 0, 0, 0.408);
       margin: 0 $about-me-info-indent;
       padding: 40px;
@@ -91,7 +110,7 @@ $about-me-info-indent: 50px;
         top: 0;
         right: 0;
         transform: translateX(calc(100% + 20px));
-        color: black;
+        color: var(--color-text);
         text-shadow: none;
       }
     }

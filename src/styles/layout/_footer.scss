@@ -5,7 +5,7 @@ footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  background: colors.$color-accent;
+  background: var(--color-accent);
   align-items: center;
 
   .contact-me {

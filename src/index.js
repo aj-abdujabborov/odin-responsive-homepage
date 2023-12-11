@@ -16,3 +16,28 @@ projects.forEach((node) => {
   githubIcon.setAttribute("aria-label", `See ${projectTitle} on Github`);
   newTabIcon.setAttribute("aria-label", `See ${projectTitle}`);
 });
+
+// Color modes
+const colorModeButton = document.querySelector("button.power-button");
+
+const savedTheme = localStorage.getItem("theme");
+if (savedTheme === "dark-theme") {
+  document.body.classList.toggle("dark-theme");
+} else if (savedTheme === "light-theme") {
+  document.body.classList.toggle("light-theme");
+}
+
+colorModeButton.addEventListener("click", () => {
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const bodyClassList = document.body.classList;
+  if (prefersDark) {
+    bodyClassList.toggle("light-theme");
+    bodyClassList.remove("dark-theme");
+  } else {
+    bodyClassList.toggle("dark-theme");
+    bodyClassList.remove("light-theme");
+  }
+
+  console.log();
+  localStorage.setItem("theme", bodyClassList[0] || "");
+});
