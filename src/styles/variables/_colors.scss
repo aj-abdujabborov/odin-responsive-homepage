@@ -26,17 +26,25 @@ $palette: (
   }
 }
 
+@mixin setDarkModeFilter {
+  img {
+    filter: brightness(0.9) contrast(1.1);
+  }
+}
+
 body {
   @include setColors("light");
 }
 
 body.dark-theme {
   @include setColors("dark");
+  @include setDarkModeFilter;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
     @include setColors("dark");
+    @include setDarkModeFilter;
   }
   body.light-theme {
     @include setColors("light");
