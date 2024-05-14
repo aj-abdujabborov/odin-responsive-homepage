@@ -1,0 +1,2 @@
+# Responsive personal page
+[Responsive page optimzed](https://aj-abdujabborov.github.io/odin-responsive-homepage/) for mobile, tablet and desktop, written with accessibility in mind with HTML and SCSS. The page is from the perspective of an imaginary robot.
